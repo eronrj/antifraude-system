@@ -1,6 +1,8 @@
-10000 simulações
-BTTS
-Over
-Under
-Vitória
-Empate
+public double score(
+    double poisson,
+    double monteCarlo){
+
+    return
+        poisson * 0.5
+      + monteCarlo * 0.5;
+}
