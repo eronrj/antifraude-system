@@ -1,1 +1,12 @@
+public class PoissonService {
 
+    public double probability(
+            int goals,
+            double lambda){
+
+        return Math.pow(lambda, goals)
+                * Math.exp(-lambda)
+                / factorial(goals);
+    }
+
+}
