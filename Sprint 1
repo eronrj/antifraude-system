@@ -1,1 +1,8 @@
-
+✓ README
+✓ Estrutura GitHub
+□ Spring Boot rodando
+□ PostgreSQL configurado
+□ Docker configurado
+□ Endpoint /health funcionando
+□ Poisson funcionando
+□ Frontend React funcionando
