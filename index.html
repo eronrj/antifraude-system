@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>AntiFraude System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>⚽ AntiFraude System</h1>
+
+<div class="card">
+
+    <label>Gols Esperados Casa (λ)</label>
+    <input id="home" type="number" step="0.1" value="1.5">
+
+    <label>Gols Esperados Visitante (λ)</label>
+    <input id="away" type="number" step="0.1" value="1.2">
+
+    <button onclick="calcular()">
+        Calcular
+    </button>
+
+</div>
+
+<div id="resultado"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
