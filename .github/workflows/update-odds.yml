@@ -1,0 +1,26 @@
+name: Atualizar Odds
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Buscar Odds
+        run: |
+          curl "URL_DA_API" > data/odds.json
+
+      - name: Commit
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+
+          git add .
+          git commit -m "Atualização automática" || exit 0
+          git push
