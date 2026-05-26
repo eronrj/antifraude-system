@@ -242,3 +242,25 @@ ${status}
 
 </body>
 </html>
+<div id="odds"></div>
+
+<script>
+async function atualizarOdds() {
+  try {
+    const resp = await fetch(
+      "https://api.the-odds-api.com/v4/sports/soccer/odds/?apiKey=SUA_API_KEY"
+    );
+
+    const dados = await resp.json();
+
+    document.getElementById("odds").innerHTML =
+      JSON.stringify(dados, null, 2);
+
+  } catch (erro) {
+    console.error(erro);
+  }
+}
+
+atualizarOdds();
+setInterval(atualizarOdds, 60000);
+</script>
