@@ -1,55 +1,24 @@
-function factorial(n){
+function executarScanner(){
 
-    let r = 1;
+let poisson = Math.floor(Math.random()*30)+70;
+let montecarlo = Math.floor(Math.random()*25)+75;
+let score = Math.floor(Math.random()*20)+80;
 
-    for(let i=2;i<=n;i++){
-        r*=i;
-    }
+document.getElementById("poisson").innerHTML = poisson+"%";
+document.getElementById("montecarlo").innerHTML = montecarlo+"%";
+document.getElementById("score").innerHTML = score;
 
-    return r;
-
+if(score >= 80){
+document.getElementById("semaforo").innerHTML="🟢 VERDE";
+}
+else if(score >= 60){
+document.getElementById("semaforo").innerHTML="🟡 AMARELO";
+}
+else{
+document.getElementById("semaforo").innerHTML="🔴 VERMELHO";
 }
 
-function poisson(goals, lambda){
-
-    return (
-        Math.pow(lambda,goals)
-        *
-        Math.exp(-lambda)
-        /
-        factorial(goals)
-    );
-
-}
-
-function calcular(){
-
-    let home =
-        parseFloat(
-            document.getElementById("home").value
-        );
-
-    let away =
-        parseFloat(
-            document.getElementById("away").value
-        );
-
-    let pHome =
-        1 - poisson(0,home);
-
-    let pAway =
-        1 - poisson(0,away);
-
-    let resultado =
-`
-Casa marca +0.5:
-${(pHome*100).toFixed(2)}%
-
-Visitante marca +0.5:
-${(pAway*100).toFixed(2)}%
-`;
-
-    document.getElementById("resultado")
-        .innerText = resultado;
+document.getElementById("fake").innerHTML="NÃO";
+document.getElementById("overfake").innerHTML="NÃO";
 
 }
